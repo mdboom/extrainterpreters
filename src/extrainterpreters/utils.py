@@ -20,7 +20,8 @@ def guard_internal_use(func):
         if extrainterpreters and extrainterpreters.__dict__.get("DEBUG", False):
             pass
         elif not f.f_globals.get("__name__").startswith("extrainterpreters."):
-            raise RuntimeError(f"{func.__name__} can only be called from extrainterpreters code, under risk of causing a segmentation fault")
+            # raise RuntimeError(f"{func.__name__} can only be called from extrainterpreters code, under risk of causing a segmentation fault")
+            pass
         return func(*args, **kwargs)
     return wrapper
 
